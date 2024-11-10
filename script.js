@@ -3,5 +3,5 @@ function redirecttopage(){
     window.open("signInpage.html", "_blank");
 }
 function redirectto(){
-    window.open("demo.html","_blank");
+    window.open("registerpage.html","_blank");
 }
