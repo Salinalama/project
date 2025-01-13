@@ -1,3 +1,12 @@
+<?php
+session_start(); // Start the session
+if (!isset($_SESSION['username'])) {
+    // Redirect to login page if user is not logged in
+    header('Location: login.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,7 +109,7 @@
     <!-- Navbar -->
     <div class="navbar">
         <h1>Admin Dashboard</h1>
-        <button class="logout" onclick="location.href='login.php'">Logout</button>
+        <button class="logout" onclick="location.href='logout.php'">Logout</button>
     </div>
 
     <!-- Dashboard Layout -->
@@ -108,17 +117,16 @@
         <!-- Sidebar -->
         <div class="sidebar">
             <a href="select.php">Manage Students</a>
-            <!-- <button class="manage" onclick="location.href='select.php'" >Manage Students</button> -->
             <a href="#">Manage Instructors</a>
             <a href="#">Manage Schedules</a>
-            <a href="#">Manage Vehicles</a>
+            <!-- <a href="#">Manage Vehicles</a> -->
             <a href="#">Reports</a>
         </div>
 
         <!-- Main Content -->
         <div class="main-content">
-            <h2>Welcome, Admin!</h2>
-            <div class="card">
+            <h2>Welcome, <?php echo ($_SESSION['username']); ?>!</h2>
+            <!-- <div class="card">
                 <h3>Overview</h3>
                 <p>Number of Students: 120</p>
                 <p>Number of Instructors: 15</p>
@@ -127,7 +135,7 @@
             <div class="card">
                 <h3>Quick Actions</h3>
                 <p>Use the sidebar to manage system resources.</p>
-            </div>
+            </div> -->
         </div>
     </div>
 
