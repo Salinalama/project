@@ -48,12 +48,46 @@ if (isset($_POST['reg_user'])) {
 
   	$query = "INSERT INTO users (username, email, password) 
   			  VALUES('$username', '$email', '$password')";
-  	mysqli_query($db, $query);
-  	$_SESSION['username'] = $username;
-  	$_SESSION['success'] = "You are now logged in";
-  	header('location: index.php');
+  		$result = mysqli_query($db, $query);
+  	    // Fetch the user row
+        if ($result) {
+          // Retrieve the inserted user's information (e.g., user_type)
+          $query = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
+          $result = mysqli_query($db, $query);
+  
+          if ($result && mysqli_num_rows($result) > 0) {
+              $row = mysqli_fetch_assoc($result);
+  
+              // Check the user type and redirect accordingly
+              if ($row["user_type"] == "user") {
+                  $_SESSION["username"] = $username; // Set session
+                  header("location: student.php"); // Redirect to user home
+                  exit();
+              } elseif ($row["user_type"] == "admin") {
+                  $_SESSION["username"] = $username; // Set session
+                  header("location: admin.php"); // Redirect to admin home
+                  exit();
+              }
+              elseif($row["user_type"]=="instructor"){
+                $_SESSION["username"] = $username;
+                header("location: instructor.php");
+                exit();
+              }
+
+               else {
+                  echo "Unknown user type.";
+              }
+          } else {
+              echo "Error retrieving user data.";
+          }
+      } else {
+          echo "Error inserting user into the database: " . mysqli_error($db);
+      }
   }
-}
+
+   
+  }
+
 
 // LOGIN USER
 if (isset($_POST['login_user'])) {
@@ -70,15 +104,32 @@ if (isset($_POST['login_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password);
   	$query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-  	$results = mysqli_query($db, $query);
-  	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
-  	  $_SESSION['success'] = "You are now logged in";
-  	  header('location: admin.html');
-  	}else {
-  		array_push($errors, "Wrong username/password combination");
-  	}
-  }
+  	$result = mysqli_query($db, $query);
+
+    // Fetch the user row
+    $row = mysqli_fetch_array($result);
+
+    // Check if a valid row is found
+    if ($row) {
+        if ($row["user_type"] == "user") {
+            $_SESSION["username"] = $username; // Set session
+            header("location: student.php"); // Redirect to user home
+        } elseif ($row["user_type"] == "admin") {
+            $_SESSION["username"] = $username; // Set session
+            header("location: admin.php"); // Redirect to admin home
+        }elseif($row["user_type"]=="instructor"){
+          $_SESSION["username"] = $username;
+          header("location: instructor.php");
+          exit();
+        }
+         else {
+            echo "Unknown user type.";
+        }
+    } else {
+        // No matching user found
+        echo "Username or password incorrect.";
+    }
+}
 }
 
 ?>
