@@ -118,8 +118,7 @@ if (!isset($_SESSION['username'])) {
         <div class="sidebar">
             <a href="manageschedule.php">View Schedule</a>
             <a href="students.php">Assigned Students</a>
-            <a href="performance.php">Performance Overview</a>
-            <a href="notifications.php">Notifications</a>
+            <a href="students_list.php">Evaluate Student</a>
             <a href="profile.php" onclick="location.href='profile.php'" >Profile Settings</a>
         </div>
 
