@@ -116,7 +116,7 @@ if (!isset($_SESSION['username'])) {
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar">
-            <a href="schedule.php">View Schedule</a>
+            <a href="manageschedule.php">View Schedule</a>
             <a href="students.php">Assigned Students</a>
             <a href="performance.php">Performance Overview</a>
             <a href="notifications.php">Notifications</a>
