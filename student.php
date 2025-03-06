@@ -121,10 +121,10 @@ if (!isset($_SESSION['username'])) {
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar">
-            <a href="#">My Schedule</a>
-            <a href="#">Progress Report</a>
+            <a href="manageschedule.php">My Schedule</a>
+            <a href="student_progress.php">Progress Report</a>
             <a href="#">Payment History</a>
-            <a href="#">Help & Support</a>
+            <a href="profile.php">Profile</a>
         </div>
 
         <!-- Main Content -->
@@ -132,31 +132,6 @@ if (!isset($_SESSION['username'])) {
             <h2>Welcome, <?php echo ($_SESSION['username']); ?>!</h2>
 
          
-            <!-- <div class="card">
-                <h3>Upcoming Classes</h3>
-                <ul>
-                    <li>January 15, 2025 - Highway Driving (8:00 AM - 10:00 AM)</li>
-                    <li>January 16, 2025 - Parallel Parking (2:00 PM - 4:00 PM)</li>
-                    <li>January 17, 2025 - Traffic Rules (10:00 AM - 12:00 PM)</li>
-                </ul>
-            </div>
-
-            
-            <div class="card">
-                <h3>Your Progress</h3>
-                <p>Lessons Completed: 5/10</p>
-                <p>Tests Passed: 2/3</p>
-                <p>Next Milestone: Master Parking Techniques</p>
-            </div>
-
-            <div class="card">
-                <h3>Notifications</h3>
-                <ul>
-                    <li>Your next payment is due on January 20, 2025.</li>
-                    <li>New lesson materials are available in the portal.</li>
-                    <li>Don't forget to review traffic rules for your upcoming test.</li>
-                </ul>
-            </div> -->
         </div>
     </div>
 

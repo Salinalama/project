@@ -12,7 +12,6 @@ $db = mysqli_connect('localhost', 'root', '', 'project');
 // REGISTER USER
 if (isset($_POST['reg_user'])) {
   // receive all input values from the form
-  $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
   $username = mysqli_real_escape_string($db, $_POST['username']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
@@ -47,8 +46,8 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO users (fullname, username, email, password) 
-  			  VALUES('$fullname', '$username', '$email', '$password')";
+  	$query = "INSERT INTO users (username, email, password) 
+  			  VALUES('$username', '$email', '$password')";
   		$result = mysqli_query($db, $query);
   	    // Fetch the user row
         if ($result) {
@@ -60,13 +59,13 @@ if (isset($_POST['reg_user'])) {
               $row = mysqli_fetch_assoc($result);
   
               // Check the user type and redirect accordingly
-              if ($row["user_type"] == "student") {
+              if ($row["user_type"] == "user") {
                   $_SESSION["username"] = $username; // Set session
                   header("location: student.php"); // Redirect to user home
                   exit();
               } elseif ($row["user_type"] == "admin") {
                   $_SESSION["username"] = $username; // Set session
-                  header("location: admin.php"); // Redirect to admin home
+                  header("location: courseenrollment.php"); // Redirect to admin home
                   exit();
               }
               elseif($row["user_type"]=="instructor"){
@@ -112,7 +111,7 @@ if (isset($_POST['login_user'])) {
 
     // Check if a valid row is found
     if ($row) {
-        if ($row["user_type"] == "student") {
+        if ($row["user_type"] == "user") {
             $_SESSION["username"] = $username; // Set session
             header("location: student.php"); // Redirect to user home
         } elseif ($row["user_type"] == "admin") {
@@ -120,7 +119,7 @@ if (isset($_POST['login_user'])) {
             header("location: admin.php"); // Redirect to admin home
         }elseif($row["user_type"]=="instructor"){
           $_SESSION["username"] = $username;
-          header("location: instructor.php");
+          header("location: courseenrollment.php");
           exit();
         }
          else {

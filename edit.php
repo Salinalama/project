@@ -1,17 +1,17 @@
 <?php
 require_once 'connect.php';
-if (isset($_GET['id']) && !empty($_GET['id'])) {
+if (isset($_GET['user_id']) && !empty($_GET['user_id'])) {
     //access granted
-    $id = (int)$_GET['id']; //data type casting
+    $user_id = (int)$_GET['user_id']; //data type casting
 
-    if ($id <= 0) {
+    if ($user_id <= 0) {
         //cross checking if invalid id passed from url query e.g. id=asdjdas
         header('location: select.php');
         exit;
     }
 
     //old records from database tables are retrieved in order to display in the form
-    $sql_1 = "SELECT * FROM users WHERE id = " . $id;
+    $sql_1 = "SELECT * FROM users WHERE user_id = " . $user_id;
     $query_1 = mysqli_query($conn, $sql_1);
 
     //validates if there is data in a table or not.
@@ -37,7 +37,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 </head>
 
 <body>
-    <form action="update.php?id=<?php echo $old_data['id']; ?>" method="POST" enctype="" name="form">
+    <form action="update.php?user_id=<?php echo $old_data['user_id']; ?>" method="POST" enctype="" name="form">
 
         Name: <input type="text" name="username" value="<?php echo $old_data['username']; ?>"> <br><br>
         Email: <input type="email" name="email" value="<?php echo $old_data['email']; ?>"> <br><br>

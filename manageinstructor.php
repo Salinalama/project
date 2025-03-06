@@ -73,7 +73,7 @@
             
         </tr>
         <?php
-        $sql = "SELECT * FROM users where user_type='student'";
+        $sql = "SELECT * FROM users where user_type='instructor'";
 
         $query = mysqli_query($conn, $sql);
         $i = 1;

@@ -117,8 +117,8 @@ if (!isset($_SESSION['username'])) {
         <!-- Sidebar -->
         <div class="sidebar">
             <a href="select.php">Manage Students</a>
-            <a href="#">Manage Instructors</a>
-            <a href="#">Manage Schedules</a>
+            <a href="manageinstructor.php">Manage Instructors</a>
+            <a href="manageschedule.php">Manage Schedules</a>
             <!-- <a href="#">Manage Vehicles</a> -->
             <a href="#">Reports</a>
         </div>
@@ -126,16 +126,7 @@ if (!isset($_SESSION['username'])) {
         <!-- Main Content -->
         <div class="main-content">
             <h2>Welcome, <?php echo ($_SESSION['username']); ?>!</h2>
-            <!-- <div class="card">
-                <h3>Overview</h3>
-                <p>Number of Students: 120</p>
-                <p>Number of Instructors: 15</p>
-                <p>Upcoming Classes: 8</p>
-            </div>
-            <div class="card">
-                <h3>Quick Actions</h3>
-                <p>Use the sidebar to manage system resources.</p>
-            </div> -->
+            
         </div>
     </div>
 

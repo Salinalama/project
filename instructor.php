@@ -120,7 +120,7 @@ if (!isset($_SESSION['username'])) {
             <a href="students.php">Assigned Students</a>
             <a href="performance.php">Performance Overview</a>
             <a href="notifications.php">Notifications</a>
-            <a href="profile.php">Profile Settings</a>
+            <a href="profile.php" onclick="location.href='profile.php'" >Profile Settings</a>
         </div>
 
         <!-- Main Content -->

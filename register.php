@@ -12,6 +12,10 @@
 	
   <form method="post" action="register.php">
   	<?php include('errors.php'); ?>
+	<div class="input-group">
+  	  <label>Full name</label>
+  	  <input type="text" name="fullname" value="<?php echo $username; ?>">
+  	</div>
   	<div class="input-group">
   	  <label>Username</label>
   	  <input type="text" name="username" value="<?php echo $username; ?>">

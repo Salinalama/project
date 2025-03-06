@@ -6,7 +6,7 @@ $sql = "UPDATE users
         username = '" . $_POST['username'] . "', 
         email = '" . $_POST['email'] . "'
 
-        WHERE id = " . $_GET['id'];
+        WHERE user_id = " . $_GET['user_id'];
 
 //executing a query in database
 $query = mysqli_query($conn, $sql);
