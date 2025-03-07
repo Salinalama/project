@@ -17,7 +17,7 @@ if ($query && mysqli_num_rows($query) > 0) {
 
 <!-- Display Profile Section -->
 <div class="card">
-    <h3>Profile Information</h3>
+    <h3 style="background-color: #b7c393 ;">Profile Information</h3>
     <p><strong>Username:</strong> <?php echo $user['username']; ?></p>
     <p><strong>Full name:</strong> <?php echo $user['fullname'] ?? 'N/A'; ?></p>
     <p><strong>Email:</strong> <?php echo $user['email']; ?></p>
@@ -31,10 +31,26 @@ if ($query && mysqli_num_rows($query) > 0) {
     <title>Document</title>
     <style>
         .card{
-            background-color: #a7a157;
-            width: 50%;
-            margin: 20%;
+            /* background-color: #a7a157; */
+            width: 40%;
+            margin: 100px 500px;
+            text-align: center;
+            height: 30%;
+            font-size: 22px;
+            border: 1px solid rgb(0, 0, 0); /* Green border */
+            border-radius: 10px; /* Rounded corners */
+            background-color:rgb(244, 242, 242); /* Light background */
+           
         }
+        .card h3 {
+            background-color: #b7c393;
+            color: white;
+            padding: 10px; 
+            margin: 0; /*filled the color*/
+            border-radius: 10px 10px 0 0; /* Rounded top corners */
+            text-align: center;
+}
+
        
 
     </style>

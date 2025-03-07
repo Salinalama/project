@@ -5,7 +5,19 @@ $sql = "SELECT user_id, username FROM students";
 $result = mysqli_query($conn, $sql);
 ?>
 
-<h2>Students List</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student list</title>
+    <link rel="stylesheet" href="table_style.css">
+</head>
+<body>
+    
+</body>
+</html>
+<h2 style="text-align: center;">Students List</h2>
 <table border="1">
     <tr>
         <th>Username</th>
@@ -15,7 +27,7 @@ $result = mysqli_query($conn, $sql);
         <tr>
             <td><?php echo $row['username']; ?></td>
             <td>
-                <a href="rate_student.php?user_id=<?php echo $row['user_id']; ?>">Rate</a>
+                <a href="rate_student.php?user_id=<?php echo $row['user_id']; ?>">Evaluate</a>
             </td>
         </tr>
     <?php } ?>
