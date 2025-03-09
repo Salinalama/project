@@ -18,18 +18,16 @@
             color: #333;
             background-color: #f9f9f9;
             margin-top: 80px; /* Adjust to match the navbar's height */
-
         }
 
         header {
             background-color: #b7c393;
             position: fixed;
-           top: 0;
-           left: 0;
+            top: 0;
+            left: 0;
             width: 100%;
             z-index: 1000;
-           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
@@ -115,14 +113,14 @@
         }
 
         .about-section, .courses-section {
-            background-color: #b7c393; 
+            background-color: #b7c393;
             margin: 20px auto;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            
         }
-        .about-section{
+
+        .about-section {
             text-align: center;
             max-width: 90%;
         }
@@ -160,10 +158,28 @@
             text-decoration: none;
             border-radius: 5px;
             display: inline-block;
+            margin: 5px;
         }
 
         .course-card .btn:hover {
             background-color: #b7c393;
+        }
+
+        .course-details {
+            display: none;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .course-details ul {
+            list-style-position: inside;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .course-details li {
+            text-align: center;
+            margin-bottom: 5px;
         }
 
         .contact-section {
@@ -210,7 +226,6 @@
     <img src="driving.png" alt="Driving School">
 </section>
 
-
 <section id="courses" class="courses-section">
     <h2>Our Courses</h2>
 
@@ -219,23 +234,20 @@
         <p>Learn the basics of driving in a safe and supportive environment.</p>
         <button class="btn details-btn" onclick="toggleDetails('beginner-details')">View Details</button>
         <a href="login1.php" class="btn">Enroll Now</a>
-      
-    <div id="beginner-details" class="course-details">
-            
+        <div id="beginner-details" class="course-details">
+            <ul>
                 <li>Basic driving techniques</li>
                 <li>Traffic rules and regulations</li>
                 <li>Safe driving practices</li>
-           
+            </ul>
             <p><strong>Duration:</strong> 4 weeks</p>
             <p><strong>Fee:</strong> NPR 10,000</p>
         </div>
-        
     </div>
 
     <div class="course-card">
         <h3>Advanced Techniques</h3>
         <p>Refine your skills with advanced driving techniques.</p>
-        
         <button class="btn details-btn" onclick="toggleDetails('advanced-details')">View Details</button>
         <a href="login1.php" class="btn">Enroll Now</a>
         <div id="advanced-details" class="course-details">
@@ -252,7 +264,6 @@
     <div class="course-card">
         <h3>Test Preparation</h3>
         <p>Get ready for your driving test with expert guidance.</p>
-        
         <button class="btn details-btn" onclick="toggleDetails('test-prep-details')">View Details</button>
         <a href="login1.php" class="btn">Enroll Now</a>
         <div id="test-prep-details" class="course-details">
@@ -265,7 +276,6 @@
             <p><strong>Fee:</strong> NPR 8,000</p>
         </div>
     </div>
-
 </section>
 
 <script>
@@ -284,8 +294,6 @@ function toggleDetails(id) {
     <p>At GoGEAR, we are committed to delivering top-notch driving education to make you a confident and responsible driver. Our certified instructors and modern techniques ensure the best learning experience.</p>
 </section>
 
-
-
 <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
     <p>Email: info@gogear.com</p>
@@ -298,5 +306,4 @@ function toggleDetails(id) {
 </footer>
 
 </body>
-
 </html>
