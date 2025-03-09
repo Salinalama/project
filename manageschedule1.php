@@ -19,7 +19,7 @@
             <th>Course Name</th>
             <th>Course Date</th>
             <th>Instructor</th>
-            <th>Action</th>
+     
         </tr>
         <?php
         // Fetch events from the database
@@ -37,11 +37,7 @@
                     <td><?php echo $row['Course_name']; ?></td>
                     <td><?php echo $row['Course_date']; ?></td>
                     <td><?php echo $row['Instructor']; ?></td>
-                    <td>
-                        <a href="edit_event.php?id=<?php echo $row['id']; ?>">Edit</a>
-                        <a href="delete_event.php?id=<?php echo $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this event?')">Delete</a>
-                        <a href="add_event.php" class="add-button">Add </a>
-                    </td>
+                    
                 </tr>
         <?php
             }

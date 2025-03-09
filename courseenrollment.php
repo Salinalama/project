@@ -190,9 +190,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Course Time -->
         <select id="course-time" name="course-time" required>
             <option value="">Select Course Time</option>
-            <option value="Morning">Morning</option>
-            <option value="Afternoon">Afternoon</option>
-            <option value="Evening">Evening</option>
+            <option value="Morning(9-10)">Morning(9-10)</option>
+            <option value="Afternoon(2-3)">Afternoon(2-3)</option>
+            <option value="Evening(5-6)">Evening(5-6)</option>
         </select>
         <p id="timeError" class="error"></p>
 
@@ -289,3 +289,5 @@ function validateForm() {
 
 </body>
 </html>
+
+

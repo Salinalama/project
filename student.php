@@ -29,8 +29,10 @@ if (!isset($_SESSION['username'])) {
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar">
-            <a href="manageschedule.php">My Schedule</a>
+            <a href="manageschedule1.php">View Schedule</a>
             <a href="student_progress.php">Progress Report</a>
+            <a href="courseenrollment.php">Course Enrollment Form</a>
+            <a href="view_enrollmentsdetail.php">Enrollment details</a>
             <a href="profile.php">Profile</a>
         </div>
 

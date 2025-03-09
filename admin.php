@@ -31,9 +31,13 @@ if (!isset($_SESSION['username'])) {
             <a href="select.php">Manage Students</a>
             <a href="manageinstructor.php">Manage Instructors</a>
             <a href="manageschedule.php">Manage Schedules</a>
-            <a href="attendance.php">Mark attendance</a>
+            <!-- <a href="attendance.php">Mark attendance</a> -->
+            <a href="student_list.php">Assign student</a>
+            <a href="enrollment_records.php">Enrollment Records</a>
+
+
             <!-- <a href="#">Manage Vehicles</a> -->
-            <a href="#">Reports</a>
+            <a href="display_student.php">Reports</a>
         </div>
 
         <!-- Main Content -->

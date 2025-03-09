@@ -115,7 +115,7 @@
         }
 
         .about-section, .courses-section {
-            background-color: #b7c393; /*note*/
+            background-color: #b7c393; 
             margin: 20px auto;
             border-radius: 10px;
             padding: 20px;

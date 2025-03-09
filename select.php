@@ -9,9 +9,11 @@
     <title>Document</title>
     <link rel="stylesheet" href="table_style.css">
     
+    
 </head>
 
 <body>
+    <h2 style="text-align: center;">Manage Student</h2>
     <table border="1">
         <tr>
             <th>ID.</th>

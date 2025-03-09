@@ -1,7 +1,7 @@
 <?php
 require_once 'connect.php';
 
-$sql = "SELECT user_id, username FROM students";
+$sql = "SELECT user_id, username FROM users where user_type ='student'";
 $result = mysqli_query($conn, $sql);
 ?>
 

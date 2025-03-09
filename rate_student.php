@@ -7,7 +7,11 @@ if (!isset($_GET['user_id']) || empty($_GET['user_id'])) {
 
 $student_id = (int)$_GET['user_id']; // Get student ID dynamically
 
-$sql = "SELECT * FROM students WHERE user_id = $student_id";
+$sql = "SELECT u.user_id, u.username, u.email, 
+               s.attendance, s.skill_rating, s.test_score, s.instructor_feedback
+        FROM users u
+        LEFT JOIN students s ON u.user_id = s.user_id
+        WHERE u.user_id = $student_id";
 $result = mysqli_query($conn, $sql);
 
 if (!$result || mysqli_num_rows($result) == 0) {

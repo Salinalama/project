@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    <h2 style="text-align: center;">Mange Instructor</h2>
     <table border="1">
         <tr>
             <th>ID.</th>
